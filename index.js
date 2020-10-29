@@ -116,8 +116,6 @@ function onRequest(request, response) {
                         </tr>`;
                     });
 
-                    console.log(ranking);
-
                     html += `</tbody>
                     </table>`;
 
