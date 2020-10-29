@@ -44,7 +44,7 @@ function onRequest(request, response) {
             const responseData = await fetch(finalURL.replace('@SUBSTITUIR_USUARIO@', user));
             const data = await responseData.json();
 
-            if (data.data.gameTypes && data.data.gameTypes.rank) {
+            if (data.data.gameTypes && data.data.gameTypes.length) {
                 let gameType = data.data.gameTypes.filter(gameType => {
                     return gameType.name === 'RANKED_SOLO_DUO';
                 }).shift();
