@@ -44,16 +44,16 @@ function onRequest(request, response) {
             const responseData = await fetch(finalURL.replace('@SUBSTITUIR_USUARIO@', user));
             const data = await responseData.json();
 
-            let gameType = data?.data?.gameTypes.filter(gameType => {
-                return gameType.name === 'RANKED_SOLO_DUO';
-            }).shift();
+            if (data.data.gameTypes && data.data.gameTypes.rank) {
+                let gameType = data.data.gameTypes.filter(gameType => {
+                    return gameType.name === 'RANKED_SOLO_DUO';
+                }).shift();
 
-            if (gameType && gameType.rank) {
                 ranking.push({
                     user: user,
                     icon: data.data.profile.summoner.icon,
-                    tier: gameType?.rank.tier,
-                    division: gameType?.rank.division,
+                    tier: gameType.rank.tier,
+                    division: gameType.rank.division,
                     lp: gameType.lp,
                     wins: gameType.wins,
                     losses: gameType.losses
