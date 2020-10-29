@@ -39,7 +39,9 @@ function onRequest(request, response) {
         'PehdeCachorro',
         'VASECTOMIA',
         'ToddyBanda',
-        'BloodMaryQueen'
+        'BloodMaryQueen',
+        'josef climbstom',
+        'Safira Lunar'
     ];
 
     let ranking = [];
