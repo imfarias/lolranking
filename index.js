@@ -27,7 +27,7 @@ function onRequest(request, response) {
 
     const userList = [
         'TABELINHA',
-        'MDG Arcantola',
+        'Arcanto',
         'DIAFRAGMA',
         'ARES ALMEIDA',
         'LAQUEADURA',
@@ -52,7 +52,7 @@ function onRequest(request, response) {
             const responseData = await fetch(finalURL.replace('@SUBSTITUIR_USUARIO@', user));
             const data = await responseData.json();
 
-            if (data.data.gameTypes && data.data.gameTypes.length) {
+            if (data.data && data.data.gameTypes && data.data.gameTypes.length) {
                 let gameType = data.data.gameTypes.filter(gameType => {
                     return gameType.name === type;
                 }).shift();
